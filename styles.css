@@ -1,0 +1,115 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b0e11;
+  --panel: #11161c;
+  --accent: #db2d2d;
+  --text: #d6e2f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at top, #1b2129, var(--bg));
+  color: var(--text);
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image: url("https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1200&q=80");
+  mix-blend-mode: screen;
+}
+
+.office {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  position: relative;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  border-bottom: 1px solid #2a3644;
+  padding-bottom: 0.5rem;
+}
+
+.hud h1 {
+  margin: 0;
+  color: #f3b14c;
+  letter-spacing: 0.03em;
+}
+
+.status {
+  display: flex;
+  gap: 1rem;
+  font-family: "Consolas", monospace;
+}
+
+.briefing {
+  margin-top: 1rem;
+  background: rgba(17, 22, 28, 0.85);
+  border: 1px solid #2a3644;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.cameras {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.camera {
+  background: var(--panel);
+  border: 1px solid #2a3644;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.camera img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.7) contrast(1.1) brightness(0.8);
+}
+
+.camera h3 {
+  margin: 0;
+  padding: 0.7rem;
+  font-size: 0.95rem;
+  color: #9ac8ff;
+}
+
+.controls {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.7rem;
+}
+
+button {
+  flex: 1;
+  padding: 0.8rem;
+  background: #1e2630;
+  color: var(--text);
+  border: 1px solid #364554;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button.closed {
+  background: #4a1111;
+  border-color: var(--accent);
+  color: #ffd8d8;
+}
